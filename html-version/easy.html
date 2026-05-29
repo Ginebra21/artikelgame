@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel üben</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class ="main_container">
+        <div class="xlg_text">
+            <p class="title" id="title"><b>Which German article is it?</b></p>
+        </div>
+            <div class ="screen_container">
+                    <div class="glass"></div>
+                    <div class="image_container">
+                        <img id="image" src="" alt="pixelated thing to show" />
+                    </div>
+                <p id="word"></p>
+                <p class="xsm_text" id="points-text"><b>Points obtained:</b> <span id="valor-puntos">0</span></p>
+            </div>
+            <div class="layout">
+                <div class="cross">
+                    <button onclick="checkAnswer('die')" class="btn"><b>Die</b></button>
+                        <div class="middle-row">
+                            <button onclick="checkAnswer('der')" class="btn"><b>Der</b></button>
+                            <div class="empty"></div>
+                            <button onclick="checkAnswer('das')" class="btn"><b>Das</b></button>
+                        </div>
+                    <button onclick="skipQuestion()" class="btn"><b>Skip</b></button>
+                        </div>
+                <div class="round-buttons">
+                    <a href="index.html"><button class="btn round"><b>Back</b></button></a>
+                    <button onclick="showHint()" class="btn round"><b>?</b></button>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> <!-- Connects html to javascript -->
+    <script>
+        selectMode('easy');
+
+        document.addEventListener('click', (e) => {
+            const button = e.target.closest('BUTTON');
+            if (!button) return;
+
+            const link = button.closest('a');
+            if (link) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                clickSound.currentTime = 0;
+                clickSound.play().catch(e => console.error(e));
+                setTimeout(() => {
+                    location.href = link.getAttribute('href');
+                }, 200);
+            }
+        }, true);
+    </script>
+</body>
+</html>

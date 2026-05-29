@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel üben</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class ="main_container">
+        <div class="xlg_text">
+            <p class="title" id="title"><b>Which German article is it?</b></p>
+        </div>
+            <div class ="screen_container">
+                <div class="glass"></div>
+                <p class="md_text" id="instructions-title"><b>Instructions:</b></p>
+                <p class="sm_text" id="instructions-text">You will be shown an image from a thing, and you will need to choose from the 3 options below (die, das, der) which article belongs to the object in singular, not plural.</p>
+            </div>
+        <div class="layout">
+
+            <div class="cross">
+                <button onclick="skipQuestion()" class="btn" id="btn-top"><b>|</b></button>
+                    <div class="middle-row">
+                        <button class="btn" id="btn-left"><b>—</b></button>
+                        <div class="empty"></div>
+                        <button class="btn" id="btn-right"><b>—</b></button>
+                    </div>
+                <button class="btn" id="btn-bottom"><b>|</b></button>
+                    </div>
+        
+            <div class="round-buttons">
+                <a href="choose_difficulty.html"><button onclick="startGame()" class="btn round"><b>Start</b></button></a>
+                <button class="btn round"><b>+</b></button>
+            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script> <!-- Connects html to javascript -->
+    </body>
+</html>
