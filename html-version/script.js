@@ -130,6 +130,7 @@ const QUESTION_SETS = {
     let currentIndex = 0;
     let score = 0;
     let skipped = [];
+    let pointsPerQuestion = 1;
 
     const bgMusic = new Audio('./background.mp3');
     bgMusic.loop = true;
@@ -142,6 +143,11 @@ const MUSIC_SETS = {
     hard: './background3.mp3',
 };
 function selectMode(mode) {
+
+    if (mode === 'easy') pointsPerQuestion = 1;
+    else if (mode === 'normal') pointsPerQuestion = 3;
+    else if (mode === 'hard') pointsPerQuestion = 5;
+
     bgMusic.src = MUSIC_SETS[mode];
     bgMusic.loop = true;
     bgMusic.load();
@@ -197,13 +203,12 @@ function showHint() {
 }
 
 
-
 function checkAnswer(selected) {
     const correct = currentQuestions[currentIndex].answer;
 
     if(selected === correct) {
         rightSound.play();
-        score++;
+        score+= pointsPerQuestion;
         document.getElementById('valor-puntos').textContent = score;
         showFeedback(true);
     } else {
@@ -213,6 +218,7 @@ function checkAnswer(selected) {
 
     currentIndex++;
     loadQuestion();
+    showFeedback(selected === correct);
 }
 
 function skipQuestion() {
@@ -234,6 +240,8 @@ function showFeedback(isCorrect, correctAnswer = null) {
     // resetea el color después de 1 segundo
     setTimeout(() => { word.style.color = ''; }, 1000);
 }
+
+
 
 function showResults() {
     console.log(`Points: ${score}/${currentQuestions.length}`);
